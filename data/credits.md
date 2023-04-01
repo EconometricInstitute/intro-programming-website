@@ -16,6 +16,7 @@ The following individuals have contributed to creating this course page for the 
 * Rowan Hoogervorst
 * Marja van der Wind
 * Nick Koning
+* Henk-Jan Harbers
 
 ## Contributors Original Course Material
 
