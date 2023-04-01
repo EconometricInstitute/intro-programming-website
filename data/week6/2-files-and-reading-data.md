@@ -6,7 +6,7 @@ hidden: false
 
 <text-box variant='learningObjectives' name='Learning Objectives'>
 
-- You'll review reading keyboard input.
+- You will review reading keyboard input.
 
 - You know what a file and a filesystem are, and are able to add an empty text file into the filesystem.
 
@@ -14,11 +14,13 @@ hidden: false
 
 </text-box>
 
-A considerable amount of software is in one way or another based on handling data. Software created for playing music handles music files and those created for the purpose of image manipulation handle image files. Applications that run on the internet and mobile devices, such as Facebook, WhatsApp, and Telegram, handle user information that is stored in file-based databases. What these all have in common is that they read and manipulate data in one way or another. Also, the data being handled is ultimately stored in some format in one or more files.
+Handling data is a fundamental aspect of software development. Many applications, such as music players and image editors, work by processing data in the form of music or image files. Even internet and mobile applications like Facebook, WhatsApp, and Telegram operate by handling user information stored in file-based databases. Regardless of the specific application, software must read and manipulate data to carry out its intended functions.
+
+In all of these cases, the data being handled is ultimately stored in one or more files, often in a specific file format. This means that understanding how to work with files and file formats is an essential skill for software developers. By efficiently managing and manipulating data, software can provide valuable and meaningful experiences to users.
 
 ## Reading From the Keyboard
 
-We've been using the `Scanner`-class since the beginning of this course to read user input. The block in which data is read has been a while-true loop where the reading ends at a specific input.
+Throughout this course, we have been using the `Scanner` class to read user input. Typically, we use a while-true loop to continuously read input until we encounter a specific input that signals the end of the input block.
 
 ```java
 Scanner scanner = new Scanner(System.in);
@@ -36,9 +38,9 @@ while (true) {
 }
 ```
 
-In the example above, we pass system input (`System.in`) as a parameter to the constructor of the Scanner-class. In text-based user interfaces, the input of the user is directed into the input stream one line at a time, which means that the information is sent to be handled every time the user enters a new line.
+Text-based user interfaces typically direct user input into the input stream one line at a time. In the previous example, we used the `Scanner` class to read user input and passed the system input stream (`System.in`) as a parameter to its constructor.
 
-The user input is read in string form. If we wanted to handle the input as integers, for instance, we'd have to convert it to another form. An example program has been provided below - it reads input from the user until the user inputs "end". As long as the user input is not "end" the inputs are handled as integers -- in this case, the number is simply printed.
+By default, the `Scanner` class reads user input as strings. If we want to handle the input as a different data type, such as integers, we must convert it to the appropriate form. For example, consider the program below, which reads user input until the user enters "end". As long as the input is not "end", it is treated as an integer and printed to the console:
 
 ```java
 Scanner scanner = new Scanner(System.in);
@@ -57,7 +59,7 @@ while (true) {
 
 <programming-exercise name='Cubes'>
 
-Write a program that reads strings from the user until the user inputs the string "end". As long as the input is not "end", the program should handle the input as an integer and print the cube of the number provided (i.e., number _ number _ number). Below are some sample outputs
+Write a program that reads strings from the user until the user inputs the string "end". As long as the input is not "end", the program should handle the input as an integer and print the cube of the number provided (i.e., number * number * number). Below are some sample outputs
 
 <sample-output>
 
@@ -81,25 +83,23 @@ Write a program that reads strings from the user until the user inputs the strin
 
 ## Files and the Filesystem
 
-**Files** are collections of data that live in computers. These files can contain, among other things, text, images, music, or any combination of these. The file format determines the content of the file as well as the program required to read the file. For example, PDF files are read with a program suited for reading PDF files, and music files are read with a program suited for reading music files. Each of these programs is made by humans, and the creators of these programs -- i.e., programmers -- also specify the file format as part of the work.
+**Files** are collections of data that reside on computers and can contain various types of content, such as text, images, or music, depending on their format. The file format specifies the content of the file as well as the program required to read it. For example, PDF files require a PDF reader, and music files require a media player. Programmers are responsible for specifying the file format as part of their work in creating these programs.
 
-Computers have several different programs for browsing files. These programs are specific to the operating system. All programs used for browsing files make use of the filesystem of the computer in one way or another.
-
-Our development environment provides us with the ability to browse the files of a project. In IntelliJ you can take a look at all the files attached to a project by selecting the `Project Files` tab, which is found in the same place as the `Projects` tab. Moreover, you will also see the files in the familar `Projects` tab together with the code.
+Computers have different programs for browsing files, which are specific to the operating system. These programs make use of the computer's filesystem in various ways. In IntelliJ, you can browse the files of a project by selecting the "Project Files" tab, located alongside the "Projects" tab. You can also see the project files in the "Projects" tab along with the code. This provides a convenient way to manage and view the files associated with your project.
 
 <text-box type="info" name="The Concrete File Storage Format">
 
-Files exist on the hard drive of a computer, which is, in reality, a large set of ones and zeros, i.e., bits. Information is made up of these bits, e.g., one variable of type int takes up 32 bits (i.e., 32 ones or zeros). Modern terabyte-sized hard drives hold about 8 trillion bits (written out the number is 8,000,000,000,000). On this scale, a single integer is very small.
+Files are essentially collections of data that reside on a computer's hard drive, which is essentially a massive series of ones and zeroes (i.e., bits) that store information. For example, a single variable of type "int" takes up 32 bits (i.e., 32 ones or zeroes), while modern terabyte-sized hard drives hold about 8 trillion bits (or 8,000,000,000,000).
 
-Files can exist practically anywhere on a hard drive, even separated into multiple pieces. The computer's **filesystem** has the responsibility of keeping track of the locations of files on the hard drive as well as providing the ability to create new files and modify them. The filesystem's main responsibility is abstracting the true structure of the hard drive; a user or a program using a file doesn't need to care about how, or where, the file is actually stored.
+Files can be located almost anywhere on a hard drive, and they can even be split into multiple pieces. The computer's **filesystem** is responsible for keeping track of the locations of files on the hard drive, as well as for creating new files and modifying existing ones. Essentially, the filesystem acts as an abstraction layer that hides the underlying structure of the hard drive, allowing users and programs to access files without needing to know how or where they are actually stored.
 
 </text-box>
 
 ## Reading From a File
 
-**Reading a file** is done using the Scanner-class. When we want to read a file using the Scanner-class, we give the path for the file we want to read as a parameter to the constructor of the class. The path to the file can be acquired using Java's `Paths.get` command, which is given the file's name in string format as a parameter: `Paths.get("filename.extension")`.
+To read a file in Java, the `Scanner` class is used. To read a specific file, the path of that file is provided to the constructor of the `Scanner` object. The path to the file can be obtained using the `Paths.get` method, which takes the name of the file as a string parameter: `Paths.get("filename.extension")`.
 
-When the `Scanner`-object that reads the file has been created, the file can be read using a while-loop. The reading proceeds until all the lines of the file have been read, i.e., until the scanner finds no more lines to read. Reading a file may result in an error, and it's for this reason that the process requires separate blocks - one for the `try`, and another to `catch` potential errors. We will not be going into more detail about this during this course.
+Once the `Scanner` object has been created, the file can be read using a while-loop until all lines in the file have been read. However, reading a file may result in an error, which is why the process requires separate try and catch blocks to handle potential errors. Further details about handling errors during file reading will not be covered in this course.
 
 ```java
 // first
@@ -123,7 +123,7 @@ try (Scanner scanner = new Scanner(Paths.get("file.txt"))) {
 }
 ```
 
-A file is read from the project root by default ( when `new Scanner(Paths.get("file.txt"))` is called), i.e., the folder that contains the folder `src` (and possibly other files as well). The contents of this folder can the inspected using the `Project Files`-tab in IntelliJ.
+A file is read from the project root by default (when `new Scanner(Paths.get("file.txt"))` is called), i.e., the folder that contains the folder `src` (and possibly other files as well). The contents of this folder can the inspected using the `Project Files`-tab in IntelliJ.
 
 <programming-exercise name='Printing a Specified File'>
 
@@ -258,9 +258,9 @@ try (Scanner scanner = new Scanner(Paths.get("henkilot.csv"))) {
 
 ## Reading Data of a Specific Format From a File
 
-The world is full of data that are related to other data -- these form collections. For example, personal information can include a name, date of birth and a phone number. Address information, on the other hand, can include a country, city, street address, postal number and so on.
+The world is filled with data that is related to other data, forming collections. For example, personal information can include a name, date of birth, and a phone number. Address information, on the other hand, can include a country, city, street address, postal code, and so on.
 
-Data is often stored in files using a specific format. One such format that's already familiar to us is comma-separated values (CSV) format, i.e., data separated by commas.
+Often, data is stored in files using a specific format. One such format that we are already familiar with is comma-separated values (CSV) format, where data is separated by commas.
 
 ```java
 Scanner scanner = new Scanner(System.in);
@@ -301,7 +301,7 @@ Age: 20
 
 </sample-output>
 
-Reading the same data from a file called `records.txt` would look like so:
+Reading the same data from a file called `records.txt` would look like this:
 
 ```java
 try (Scanner scanner = new Scanner(Paths.get("records.txt"))) {
@@ -321,7 +321,7 @@ try (Scanner scanner = new Scanner(Paths.get("records.txt"))) {
 
 <programming-exercise name='Records From a File'>
 
-In this exercise, we'll be working with files stored in CSV-format that contain names and ages separated by commas. The file format may look like this:
+In this exercise, we'll be working with files stored in CSV-format that contain names and ages separated by commas. The file format could look like this:
 
 <sample-data>
 
@@ -332,7 +332,7 @@ amy,1
 
 </sample-data>
 
-Your task is to write a program that first prompts the user for the name of the file they want to read. The program then prints the content of the file in the following way (we're assuming below that the output is from the above-mentioned file):
+Your task is to write a program that first prompts the user for the name of the file they want to read. The program then prints the content of the file in the following way (we're assuming that the output is from the above-mentioned file):
 
 <sample-output>
 
