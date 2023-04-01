@@ -6,14 +6,13 @@ hidden: false
 
 <text-box variant='learningObjectives' name='Learning Objectives'>
 
- - Understand creating programs so that the user interface and the application logic are separated
+ - Understand creating programs such that the user interface and the application logic are separated
 
  - Can create a textual user interface, which takes program specific application logic and a Scanner object as parameters
 
 </text-box>
 
-Let's examine the process of implementing a program and separating different areas of responsibility from each other.
-The program asks the user to write words until they write the same word twice.
+Let us explore the process of implementing a program and the importance of separating different areas of responsibility. Specifically, we will focus on a program that prompts the user to enter words until they repeat a word.
 
 <sample-output>
 
@@ -26,10 +25,9 @@ You wrote the same word twice!
 
 </sample-output>
 
-Let's build this program piece by piece. One of the challenges is that it is difficult to decide how to approach the problem, or how to split the problem into smaller subproblems, and from which subproblem to start.
-There is no one clear answer -- sometimes it is good to start from the problem domain and its concepts and their connections, sometimes it is better to start from the user interface.
+To create this program, we'll need to build it step by step. However, one of the challenges we'll face is determining the best approach to take in solving the problem and deciding how to break it down into smaller subproblems. There is no definitive answer to this question, and it may depend on various factors, such as the problem domain and its concepts or the user interface.
 
-We could start implementing the user interface by creating a class UserInterface. The user interface uses a Scanner object for reading user input. This object is given to the user interface.
+One possible way to begin would be to focus on the user interface and develop a UserInterface class. This class would rely on a Scanner object to read user input. We can pass this object to the user interface so that it can process the input and provide appropriate feedback.
 
 ```java
 public class UserInterface {
@@ -84,7 +82,7 @@ public class UserInterface {
 }
 ```
 
-The program continues to ask for words until the user enters a word that has already been entered before. Let us modify the program so that it checks whether the word has been entered or not. We don't know how to implement this functionality yet, so let us first build an outline for it.
+The current version of the program prompts the user for words until a repeat entry is detected. To achieve this, we need to modify the program to check if each entered word has already been submitted. However, we have yet to determine how this functionality will be implemented. Therefore, we will begin by creating an outline for the solution before proceeding with the actual implementation.
 
 ```java
 public class UserInterface {
@@ -117,7 +115,7 @@ public class UserInterface {
 }
 ```
 
-It's a good idea to test the program continuously, so let's make a test version of the method:
+It is a good idea to test the program continuously, so let's make a test version of the method:
 
 ```java
 public boolean alreadyEntered(String word) {
@@ -145,7 +143,7 @@ The program doesn't completely work yet, but the first sub-problem - quitting th
 
 ## Storing relevant information
 
-Another sub-problem is remembering the words that have already been entered. A list is a good structure for this purpose.
+Another sub-problem is remembering the already entered words. A list is a good structure for this purpose.
 
 ```java
 public class UserInterface {
@@ -161,7 +159,7 @@ public class UserInterface {
 }
 ```
 
-When a new word is entered, it has to be added to the list of words that have been entered before. This is done by adding a line that updates our list to the while-loop:
+When a new word is entered, it has to be added to the list of words that have been entered before. This is achieved by adding a line that updates our list to the while-loop:
 
 ```java
 while (true) {
@@ -177,7 +175,7 @@ while (true) {
 }
 ```
 
-The whole user interface looks as follows.
+The whole user interface looks as follows:
 
 ```java
 public class UserInterface {
@@ -217,7 +215,7 @@ public class UserInterface {
 }
 ```
 
-Again, it is a good idea to test that the program still works. For example, it might be useful to add a test print to the end of the start-method to make sure that the entered words have really been added to the list.
+Before proceeding with the actual implementation of the new functionality, it's a good practice to perform testing to ensure the program still functions correctly. One way to test the program is to include a print statement at the end of the start-method, confirming that the entered words have indeed been added to the list.
 
 ```java
 // test print to check that everything still works
@@ -228,7 +226,7 @@ for (String word: this.words) {
 
 ## Combining the solutions to sub-problems
 
-Let's change the method 'alreadyEntered' so that it checks whether the entered word is contained in our list of words that have been already entered.
+Let's change the method `alreadyEntered` such that it checks whether the entered word is contained in our list of already entered words.
 
 ```java
 public boolean alreadyEntered(String word) {
@@ -293,11 +291,11 @@ public class UserInterface {
 }
 ```
 
-From the point of view of the user interface, the support variable 'words' is just a detail. The main thing is that the user interface remembers the *set of words* that have been entered before. The set is a clear distinct "concept" or an abstraction. Distinct concepts like this are all potential objects: when we notice that we have an abstraction like this in our code, we can think about separating the concept into a class of its own.
+From the perspective of the user interface, the variable 'words' that we created earlier is merely a technical detail. What's more important is that the interface maintains a record of the *set of words* that the user has already entered. This set represents a distinct concept or abstraction, and it suggests that we can create an object to encapsulate this functionality. Whenever we encounter a clear abstraction like this, it's often useful to consider separating it into its own class.
 
 ### Word set
 
-Let's make a class called 'WordSet'. After implementing the class, the user interface's start method looks like this:
+Let's make a class called `WordSet`. After implementing the class, the user interface's start method looks like this:
 
 ```java
 while (true) {
@@ -313,11 +311,9 @@ while (true) {
 System.out.println("You gave the same word twice!");
 ```
 
-From the point of view of the user interface, the class WordSet should contain the method 'boolean contains(String word)', that checks whether the given word is contained in our set of words, and the method 'void add(String word)', that adds the given word into the set.
+From the perspective of the user interface, it's beneficial to encapsulate the functionality of maintaining and checking the set of words in a separate class called `Wordset`. This class should contain two methods: `boolean contains(String word)`, which checks if the given word is already present in the set, and `void add(String word)`, which adds the word to the set.
 
-We notice that the readability of the user interface is greatly improved when it's written like this.
-
-The outline for the class 'WordSet' looks like this:
+Organizing the functionality in this way can greatly improve the readability of the user interface, making it clearer and easier to understand. Below is an outline for the implementation of the 'WordSet' class.
 
 ```java
 public class WordSet {
@@ -340,7 +336,7 @@ public class WordSet {
 
 ### Earlier solution as part of implementation
 
-We can implement the set of words by making our earlier solution, the list, into an object variable:
+We can implement the set of words by changing our earlier solution, the list, into an object variable:
 
 ```java
 import java.util.ArrayList;
@@ -363,9 +359,9 @@ public class WordSet {
 }
 ```
 
-Now our solution is quite elegant. We have separated a distinct concept into a class of its own, and our user interface looks clean. All the "dirty details" have been encapsulated neatly inside an object.
+Our solution is now much more elegant, having separated the distinct concept of maintaining a set of words into its own class. This encapsulates all the necessary details inside an object, leaving the user interface looking clean and easy to understand.
 
-Let's now edit the user interface so that it uses the class WordSet. The class is given to the user interface as a parameter, just like Scanner.
+Next, we can update the user interface to utilize the `WordSet` class. Similar to how we passed the `Scanner` object as a parameter, we can also give the user interface an instance of `WordSet`. This enables the interface to call the `contains` and `add` methods on the set, allowing it to keep track of the words that the user has entered.
 
 ```java
 public class UserInterface {
@@ -409,13 +405,13 @@ public static void main(String[] args) {
 
 ## Changing the implementation of a class
 
-We have arrived at a situation where the class 'WordSet' "encapsulates" a List. Is this reasonable? Perhaps. This is because we can make other changes to the class if we so desire, and before long we might arrive at a situation where the word set has to be, for example, saved into a file. If we make all these changes inside the class WordSet without changing the names of the methods that the user interface uses, we don't have to modify the actual user interface at all.
+In our current implementation, the class 'WordSet' encapsulates a List. Is this a reasonable approach? It could be, as it allows us to make further changes to the class if necessary. For instance, if we want to save the word set into a file in the future, we can modify the class WordSet without changing the public interfaces used by the UserInterface class.
 
-The main point here is that changes made inside the class WordSet don't affect the class UserInterface. This is because the user interface uses WordSet through the methods that it provides -- these are called its public interfaces.
+The key advantage of encapsulation is that changes made inside the WordSet class do not affect the UserInterface class. The UserInterface class accesses WordSet only through its public interfaces (methods), which shields it from any changes made to the implementation of WordSet.
 
 ## Implementing new functionality: palindromes
 
-In the future, we might want to augment the program so that the class 'WordSet' offers some new functionalities. If, for example, we wanted to know how many of the entered words were palindromes, we could add a method called 'palindromes' into the program.
+In the future, we may want to add new functionalities to the program through the class `WordSet`. For example, if we wanted to determine how many of the entered words were palindromes, we could add a method called 'palindromes' to the class.
 
 ```java
 public void start() {
@@ -436,7 +432,7 @@ public void start() {
 }
 ```
 
-The user interface remains clean, because counting the palindromes is done inside the 'WordSet' object. The following is an example implementation of the method.
+The user interface remains clean, because counting the palindromes is done inside the `WordSet` object. The following is an example implementation of the method:
 
 ```java
 import java.util.ArrayList;
@@ -488,11 +484,11 @@ public class WordSet {
 }
 ```
 
-The method 'palindromes' uses the helper method 'isPalindrome' to check whether the word that's given to it as a parameter is, in fact, a palindrome.
+The method 'palindromes' uses the helper method `isPalindrome` to check whether the word that's given to it as a parameter is, in fact, a palindrome.
 
 <text-box variant='hint' name='Recycling'>
 
-When concepts have been separated into different classes in the code, recycling them and reusing them in other projects becomes easy. For example, the class 'WordSet' could be used in a graphical user interface, and it could also be part of a mobile phone application. In addition, testing the program is much easier when it has been divided into several concepts, each of which has its own separate logic and can function alone as a unit.
+Separating concepts into different classes in the code makes it easier to recycle and reuse them in other projects. For instance, the class `WordSet` could be used in a graphical user interface or as part of a mobile phone application. Furthermore, dividing the program into several concepts makes testing easier as each unit can function separately with its own logic.
 
 </text-box>
 
@@ -502,7 +498,7 @@ In the larger example above, we were following the advice given here.
 
 -  Proceed with small steps
     -  Try to separate the program into several sub-problems and **work on only one sub-problem at a time**
-    -  Always test that the program code is advancing in the right direction, in other words: test that the solution to the sub-problem is correct
+    -  Always test that the program code is advancing in the right direction, in other words: test whether the solution to the sub-problem is correct
     -  Recognize the conditions that require the program to work differently. In the example above, we needed a different functionality to test whether a word had been already entered before.
 
 -  Write as "clean" code as possible
@@ -513,9 +509,9 @@ In the larger example above, we were following the advice given here.
     -  **Remove all copy-paste code**
     -  Replace the "bad" and unclean parts of your code with clean code
 
--  If needed, take a step back and assess the program as a whole. If it doesn't work, it might be a good idea to return into a previous state where the code still worked. As a corollary, we might say that a program that's broken is rarely fixed by adding more code to it.
+-  If needed, it's also a good idea to step back and assess the program as a whole. If it's not working, we might need to go back to a previous state where the code was still functional. As a rule, adding more code to a broken program rarely fixes it.
 
-Programmers follow these conventions so that programming can be made easier. Following them also makes it easier to read programs, to keep them up, and to edit them in teams.
+By following these practices, we can make our code more reusable and maintainable. We can also ensure that our programs work as intended and are easier to modify and test.
 
 <programming-exercise name='To do list (2 parts)'>
 
@@ -550,7 +546,7 @@ We will build the program in parts.
 
 Create a class called `TodoList`. It should have a constructor without parameters and the following methods:
 
-- `public void add(String task)` - add the task passed as a parameter to the todo list.
+- `public void add(String task)` - adds the task passed as a parameter to the to-do list.
 - `public void print()` - prints the exercises. Each task has a number associated with it on the print statement -- use the task's index here (+1).
 - `public void remove(int number)` - removes the task associated with the given number; the number is the one seen associated with the task in the print.
 
@@ -613,7 +609,9 @@ list.print();
 
 <h2>User interface</h2>
 
-Next, implement a class called `UserInterface`. It should have a constructor with two parameters. The first parameter is an instance of the class `TodoList`, and the second is an instance of the class `Scanner`. In addition to the constructor, the class should have the method `public void start()` that is used to start the text user interface. The text UI works with an eternal looping statement (`while-true`), and it must offer the following commands to the user:
+Next, create a class called `UserInterface` with a constructor that takes in two parameters. The first parameter is an instance of the `TodoList` class, and the second parameter is an instance of the `Scanner` class. The class should also contain a method called `public void start()` which will initiate the text user interface.
+
+The text user interface should have an eternal looping statement using `while-true`. It should offer the following commands to the user:
 
 - The command `stop` stops the execution of the loop, after which the execution of the program advances out of the `start` method.
 
@@ -656,7 +654,7 @@ NB! The user interface is to use the TodoList and Scanner that are passed as par
 
 ## From one entity to many parts
 
-Let's examine a program that asks the user to enter exam points and turns them into grades. Finally, the program prints the distribution of the grades as stars. The program stops reading inputs when the user inputs an empty string. An example program looks as follows:
+Consider a program that prompts the user to enter exam points and converts them into grades. The program also displays the grade distribution using stars. The program terminates when the user inputs an empty string. An example implementation of the program is shown below:
 
 <sample-output>
 
@@ -685,7 +683,7 @@ Points:
 
 </sample-output>
 
-As almost all programs, this program can be written into main as one entity. Here is one possibility.
+As almost all programs, this program can be written into `main` as one entity. Here is one possibility:
 
 ```java
 import java.util.ArrayList;
@@ -754,13 +752,13 @@ public class Program {
 }
 ```
 
-Let's separate the program into smaller chunks. This can be done by identifying several discrete areas of responsibility within the program. Keeping track of grades, including converting scores into grades, could be done inside a different class. In addition, we could create a new class for the user interface.
+To break down the program into more manageable parts, we can identify distinct areas of responsibility within the program. For instance, managing grades, which involves converting scores into grades, could be isolated in a separate class. Similarly, we could create another class specifically for the user interface.
 
 ### Program logic
 
-Program logic includes parts that are crucial for the execution of the program, like functionalities that store information. From the previous example, we can separate the parts that store grade information. From these we can make a class called 'GradeRegister', which is responsible for keeping track of the numbers of different grades students have received. In the register, we can add grades according to scores. In addition, we can use the register to ask how many people have received a certain grade.
+The program logic includes parts that are crucial for the execution of the program, like functionalities that store information. Using the previous example, we can separate the parts that store grade information and create a class called `GradeRegister`. This class will be responsible for keeping track of the number of different grades students have received. We can add grades to the register according to scores and use the register to ask how many people have received a certain grade.
 
-An example class follows.
+An example class follows:
 
 ```java
 import java.util.ArrayList;
@@ -859,7 +857,7 @@ public class Program {
 }
 ```
 
-Separating the program logic is a major benefit for the maintenance of the program. Since the program logic -- in this case the GradeRegister -- is its own class, it can also be tested separately from the other parts of the program. If you wanted to, you could copy the class `GradeRegister` and use it in your other programs. Below is an example of simple manual testing -- this experiment only concerns itself with a small part of the register's functionality.
+Separating the program's logic into different classes offers significant benefits for program maintenance. By separating the GradeRegister into its own class, it can be tested independently of the rest of the program. Additionally, the GradeRegister can be copied and used in other programs.
 
 ```java
 GradeRegister register = new GradeRegister();
@@ -873,9 +871,9 @@ System.out.println("Number of students with grade 0 (should be 2): " + register.
 
 ### User interface
 
-Typically each program has its own user interface. We will create the class `UserInterface` and separate it from the main program. The user interface receives two parameters in its constructor: a grade register for storing the grades, and a Scanner object used for reading input.
+In general, each program has its own user interface. Therefore, we will create a separate class called `UserInterface` and decouple it from the main program. The constructor of the `UserInterface` class will take two parameters: a grade register for storing the grades and a `Scanner` object that reads user input.
 
-When we now have a separate user interface at our disposal, the main program that initializes the whole program becomes very clear.
+With a separate user interface in place, the main program that initializes the entire application becomes more straightforward.
 
 ```java
 import java.util.Scanner;
@@ -922,7 +920,7 @@ public class UserInterface {
 }
 ```
 
-We can copy the code for reading exam points and printing grade distribution nearly as is from the previous main program. In the program below, parts of the code have indeed been copied from the earlier main program, and new method for printing stars has also been created -- this clarifies the method that is used for printing the grade distribution.
+It's possible to reuse the code for reading exam points and printing grade distribution from the previous main program with minimal modifications. In the following program, some parts of the code have indeed been copied from the earlier version, while a new method for printing stars has been added to improve the clarity of the code that prints the grade distribution.
 
 ```java
 import java.util.Scanner;
