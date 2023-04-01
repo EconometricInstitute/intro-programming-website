@@ -6,14 +6,14 @@ hidden: false
 
 <text-box variant='learningObjectives' name='Learning Objectives'>
 
-- You review the use of lists.
-- You know how to use a list as an instance variable.
+- Review the use of lists.
+- Know how to use a list as an instance variable.
 
 </text-box>
 
-Next, let's have a look at objects that contain a list. Examples of objects like these include objects that describe sets, for example playlists.
+Let's take a look at objects that contain a list, such as those that describe sets, for instance, playlists.
 
-In the following example, we have made a class for the concept of a playlist. The playlist contains songs: songs can be added, songs can be removed, and the songs that the playlist contains can be printed.
+Here's an example of a class we've created for the concept of a playlist. The playlist contains songs, which can be added or removed, and the songs it contains can be printed.
 
 ```java
 // imports
@@ -41,7 +41,7 @@ public class Playlist {
 }
 ```
 
-Creating playlists is easy with the help of the class above.
+Creating a playlist is easy with the help of the class above.
 
 ```java
 Playlist list = new Playlist();
@@ -59,7 +59,7 @@ Crazy Little Thing Called Love
 
 <programming-exercise name='Stack (2 parts)'>
 
-A stack is a data structure that you can add to and take from. Always to the top of it or from the top.
+A stack is a data structure that enables you to add and remove items, but only from the top of the stack.
 
 <h2> Adding to the Stack and Checking Emptiness </h2>
 
@@ -67,9 +67,9 @@ Create a `Stack` class that has a list of strings as an instance variable. Add t
 
 - `public boolean isEmpty()` - returns a `boolean`-type value (true or false) that tells whether or not the stack is empty.
 
-- `public void add(String value)` - Adds the value given as a parameter to the top of the stack.
+- `public void add(String value)` - Adds the given value as a parameter to the top of the stack.
 
-- `public List<String> values()` - returns the values ​​contained in the stack as a list.
+- `public List<String> values()` - returns the values contained in the stack as a list.
 
 You can test your class with the following code:
 
@@ -93,7 +93,7 @@ false
 
 <h2>Taking from the Stack</h2>
 
-Add to the `Stack` class a `public String take()` method, which returns the topmost value (i.e., the last value added to the deque) and removes it from the stack.
+Add a `public String take()` method to the `Stack` class, which returns the topmost value (i.e., the last value added to the deque) and removes it from the stack.
 
 ```java
 Stack s = new Stack();
@@ -143,15 +143,13 @@ while (!s.isEmpty()) {
 
 </sample-output>
 
-Tip! When a value is added to an ArrayList, it goes to the end of the list. As such, the most recently added value is in the last index of the list - the `length` method provided by the list is useful for finding the last index. You can remove an element from a particular index using the `remove` method provided by the list.
+Tip: When a value is added to an `ArrayList`, it is appended to the end of the list. Therefore, the most recently added value will be in the last index of the list. To find the last index, you can use the `length` method provided by the list. Additionally, you can remove an element from a specific index using the `remove` method provided by the list.
 
 </programming-exercise>
 
 ## Objects in an Instance Variable List
 
-A list that is an object's instance variable can contain objects other than strings as long as the type of objects in the list is specified when defining the list.
-
-In the previous section, we created a class called `AmusementParkRide`, which was used to check whether or not a person was eligible to get on a particular ride. The `Amusement park` class looks like the following.
+In the previous section, we created an `AmusementParkRide` class to verify if a person met the requirements to go on a specific ride. Here's an example of how the `AmusementPark` class might look like:
 
 ```java
 public class AmusementParkRide {
@@ -181,7 +179,7 @@ public class AmusementParkRide {
 }
 ```
 
-We'll extend the class so that the amusement park keeps track of the people on the ride. In this version, the ride has, as an instance variable, a list of the people who have been allowed on the ride. The list is created in the constructor.
+Let's expand the `AmusementParkRide` class to include a feature that keeps track of the people who are on the ride. For this updated version, the ride will have an instance variable that represents a list of the people who have been allowed on the ride. This list will be created in the constructor.
 
 ```java
 public class AmusementParkRide {
@@ -236,7 +234,7 @@ public class AmusementParkRide {
 
 <programming-exercise name='MessagingService'>
 
-The exercise template comes with a pre-defined `Message` class that can be used to create objects representing messages. Each message has a sender and some content.
+The exercise template includes a pre-defined `Message` class that can be utilized to create objects representing messages. Each message has a sender and some content.
 
 Implement the `MessagingService` class. The class must have a parameterless constructor and contain a list of `Message` objects. After that, add the following two methods to the class:
 
@@ -244,13 +242,13 @@ Implement the `MessagingService` class. The class must have a parameterless cons
 
 - `public List<Message> getMessages()` - returns the messages added to the messaging service.
 
-Tip! You can find out the length of the string using the `length()` method associated with the string.
+Tip: You can find out the length of the string using the `length()` method associated with the string.
 
 </programming-exercise>
 
 ### Printing an Object from a List
 
-Let's now modify the `toString` method so that the string returned by the method contains the name of each and every person on the ride.
+Let's now modify the `toString` method such that the string returned by the method contains the name of each and every person on the ride.
 
 ```java
 public class AmusementParkRide {
@@ -323,7 +321,7 @@ Matti
 
 </sample-output>
 
-Even though there is no one on the ride, the string `riding:` is on the print output. Let's modify the `toString` method so that if there is no one on the ride, the string returned by the method informs of it.
+Currently, the `toString` method of the `AmusementParkRide` class always outputs the string `riding`:, even if there are no riders on the ride. To handle this case and inform the user that there are no riders on the ride, we can modify the `toString` method.
 
 ```java
 public class AmusementParkRide {
@@ -412,9 +410,9 @@ Matti
 
 <programming-exercise name='Printing a Collection'>
 
-The exercise template has a predefined `SimpleCollection` class, which is used to represent a group of values. The class is missing the `toString` method used for printing.
+The exercise template includes a predefined `SimpleCollection` class, which is utilized to represent a group of values. However, the class is missing a `toString` method that is used for printing.
 
-Implement a `toString` method for the class that will perform as demonstrated in the following examples.
+We need to implement a `toString` method for the class that works as shown in the following examples.
 
 ```java
 SimpleCollection s = new SimpleCollection("alphabet");
@@ -564,9 +562,9 @@ no one is on the ride.
 
 ### Calculating a Sum from Objects on a List
 
-Let's now create a method for the amusement park ride that calculates the average height of the people currently on it. Average height can obtained by calculating the average from the persons on the ride -- the average is calculated by adding up the individual values and dividing that sum by the number of values.
+Let's create a method for the amusement park ride that calculates the average height of the people currently on it. To obtain the average height, we need to add up the heights of all the persons on the ride and divide the sum by the number of persons.
 
-The implementation underneath returns `-1` if not a single person is on the ride. The result of `-1` is impossible in a program that calculates averages. Based on that, we can determine that the average could not have been calculated.
+If there are no persons on the ride, the method should return `-1`. However, returning `-1` as the average height is impossible in a program that calculates averages. Therefore, if the method returns `-1`, we can determine that the average height could not have been calculated.
 
 ```java
 public class AmusementParkRide {
@@ -711,9 +709,11 @@ The program's output should be the following:
 
 ### Retrieving a Specific Object from a List
 
-We'll now create a method for the amusement park ride that returns the tallest person on the ride. As such, the method should both retrieve the tallest person from the list and return it.
+Now, let's create a method for the amusement park ride that returns the tallest person on the ride. The method should retrieve the tallest person from the list and return it.
 
-Methods that retrieve objects from a list should be implemented in the following way. First off, we'll check whether or not the list is empty - if it is, we return a `null` reference or some other value indicating that the list had no values. After that, we create an object reference variable that describes the object to be returned. We set the first object on the list as its value. We then go through the values on the list by comparing each list object with the object variable representing the object to be returned. If the comparison finds a better matching object, its assigned to the object reference variable to be returned. Finally, we return the object variable describing the object that we want to return.
+When implementing methods that retrieve objects from a list, we follow a specific approach. First, we check whether the list is empty. If it is, we return a `null` reference or some other value indicating that the list has no values. Next, we create an object reference variable that describes the object to be returned and initialize it to the first object on the list.
+
+We then iterate through the values on the list by comparing each list object with the object variable representing the object to be returned. If a better matching object is found, it is assigned to the object reference variable to be returned. Finally, we return the object variable describing the object that we want to return.
 
 ```java
 public Person getTallest() {
@@ -850,7 +850,7 @@ It's advisable to store the items in an `ArrayList` object:
 List<Item> items = new ArrayList<>();
 ```
 
-The class `Suitcase` should ensure that the total weight of the items within it does not exceed the maximum weight limit. If that limit would be exceeded as a result of the item to be added, the method `addItem` should not add the new item to the suitcase.
+The class `Suitcase` should ensure that the total weight of the items within it does not exceed the maximum weight limit. If that limit is exceeded as a result of the item to be added, the method `addItem` should not add the new item to the suitcase.
 
 The following is an example use case of the class:
 
@@ -889,7 +889,7 @@ The program's output should be the following:
 
 <h2>Language Formatting</h2>
 
-The statement "1 items" is not exactly proper English -- a better form would be "1 item". The lack of items could also be expressed as "no items". Implement this change to the toString method of the `Suitcase` class.
+The statement "1 items" is not exactly proper English, and a better form would be "1 item". The lack of items could also be expressed as "no items". Implement this change to the toString method of the `Suitcase` class.
 
 The output of the previous program should now look as follows:
 
@@ -947,7 +947,7 @@ Make a further modification to your class so that you only use two instance vari
 
 <h2>Heaviest item</h2>
 
-Add to the `Suitcase` class a `heaviestItem` method, which returns the largest item based on weight. If several items share the heaviest weight, the method can return any one of them. The method should return an object reference. If the suitcase is empty, return the value *null*.
+Add a `heaviestItem` method to the `Suitcase` class, which returns the largest item based on weight. If several items share the heaviest weight, the method can return any one of them. The method should return an object reference. If the suitcase is empty, return the value *null*.
 
 The following is an example of the class in use:
 
