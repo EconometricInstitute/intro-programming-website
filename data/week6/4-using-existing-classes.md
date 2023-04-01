@@ -4,9 +4,9 @@ title: "Using existing classes in Java"
 hidden: false
 ---
 
-So far, we have already been using some of the built in classes that are available in the Java programming language. Examples include the `Scanner` class, the `List` class and the `String` class. Over the course we have been getting used to how they work and have learned some of the methods they provide.
+Throughout our course, we have been using various built-in classes available in the Java programming language. These include classes like `Scanner`, `List`, and `String`. We have become accustomed to working with these classes and have learned how to use some of the methods they provide.
 
-All the above three classes, e.g., turn out to be useful when trying to build a program which asks the user for the movies in his library and then stores them in a movie collection. Let us first consider a `Movie` class:
+These classes can come in handy when building a program that requires the user to input movies in their library and store them in a collection. Before we begin, let us take a look at the `Movie` class:
 
 ``` java
 public class Movie {
@@ -89,10 +89,10 @@ System.out.println("Your current movie collection is:");
 System.out.println(collection);
 ```
 
-Note how we have used multiple methods of the available Java classes here. For example, we use the `nextLine` method from the `Scanner` class to get input from the user, the `add` method from the `List` class and the special double quotation constructor of the `String` class.
+Note how we have used various methods provided by the built-in Java classes in this code snippet. For instance, we have employed the `nextLine` method of the `Scanner` class to retrieve user input, the `add` method of the `List` class to add elements to the list, and the parameterized constructor of the `String` class to create a new string object enclosed in double quotes.
 
 ## The Java class library
-We might want to add to each movie the date at which it has been released. One way of doing this would by creating an own class to store a date. However, for many common applications, there is already some functionality available within the `Java class library`. This library consists of all the classes that are available by default in Java.
+If we want to include the release date for each movie, one approach is to create our own class to store the date. However, the `Java class library` already provides functionality for many common use cases. This library includes all the classes that are available by default in Java.
 
 Documentation of all the classes and methods that are available within the library can be found [online](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html). When we use the search functionality, we can for example find the documentation for [Scanner](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html), [String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) and [List](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html). Note how the documentation provides documentation on all the methods that are offered by a certain class, such as the [documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html#nextLine()) for the `nextLine()` method of the `Scanner` class.
 
@@ -154,7 +154,7 @@ Hint: check the [documentation](https://docs.oracle.com/en/java/javase/11/docs/a
 </programming-exercise>
 
 ## Static methods
-When looking at the [documentation]() for the `LocalDate` class we see that no constructors are given. This has to do with the fact that `LocalDate` objects are created by means of a `static` method. As discussed before, `static` indicates that a method is not part of an object of the class, but instead belongs directly to the class. For this reason, we often refer to `static` methods as `static methods`, while methods that are not `static` are referred to as `instance methods`. They can also be found under these names in the documentation.
+When looking at the [documentation]() for the `LocalDate` class, we can observe that no constructors are given. This is because `LocalDate` objects are created by means of a `static` method. As discussed before, `static` methods are not part of an object of the class, but instead belong directly to the class. For this reason, we often refer to `static` methods as `static methods`, while methods that are not `static` are referred to as `instance methods`. These terms can also be found in the documentation.
 
 We have already seen one example in which we used a static method to create an object, namely for lists. Here, we used the `List.of` method to create a list containing certain elements. Note how we are using `List` here to refer to the `List` class and then use a dot to indicate that we want to access a `static` method of this class. Similarly, we use the `LocalDate.of` method to create a `LocalDate` object. The documentation of this method is given [here](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html#of(int,int,int)).
 
@@ -261,9 +261,11 @@ Hint: Look at the [documentation](https://docs.oracle.com/en/java/javase/11/docs
 </programming-exercise>
 
 ## Javadoc comments
-Documentation for Java classes is generated by the `Javadoc` tool. This tool uses so-called Javadoc comments to build the documentation. Javadoc are regular multi-line comments that are placed in certain spots of the code. In particular, on top of a class, on top of instance variables, on top of constructors or on top of methods. Moreover, some special tags are available to fill in certain details of the documentation.
+Java class documentation is generated using the `Javadoc` tool. Javadoc comments are multi-line comments placed in specific parts of the code, such as on top of a class, instance variables, constructors, or methods. The tool uses these comments to generate the documentation.
 
-Let us look again at the `MovieCollection` class that we have created before. When we add Javadoc comments, this class looks like the following:
+In addition to regular comments, Javadoc comments use special tags to provide additional information about the class, method, or variable.
+
+For example, let's consider the `MovieCollection` class we created earlier. Here is how the class would look with Javadoc comments:
 ``` java
 /**
  * A class that represents a movie collection and thus allows to store movies.
@@ -316,10 +318,10 @@ public class MovieCollection {
 }
 ```
 
-Note that we have now added multiline comments above the class, its constructor and its methods. These comments make clear what the purpose is of the class and these methods. Hence, they allow a user to know what these methods do without the user having to look at their implementation. Note also the special characters that we have used. These are:
+The multiline comments added above the class, constructor, and methods in the `MovieCollection` class provide a clear understanding of their purpose. This allows users to know what each method does without having to look at its implementation. Special characters are:
 - `@param` followed by a parameter name, to indicate what each parameter in the method indicates
 - `@return` to indicate what is returned from a method
 
-The Javadoc comments can be handy in two ways. First of all, if someone reads your code, he can use the Javadoc comments to see what the class and methods are supposed to do. Hence, he can use the Javadoc as documentation of what he can do with your code. Secondly, you can also create actual documentation pages from your code. This can be done by going to `Tools > Generate JavaDoc`. If we would do this for our `MovieCollection` class, we would get the below documentation:
+Javadoc comments have two main advantages. Firstly, they can be used by someone reading the code to understand what the class and methods are supposed to do, effectively serving as documentation for the code. Secondly, documentation pages can be generated from the code using the `Tools > Generate JavaDoc` option.
 
 <img src="../img/javadocMovieCollection.jpeg"/>
