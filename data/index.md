@@ -13,8 +13,7 @@ This course page will act as the main reference for the course and contains prac
 ## Course Menu
 
 <div style="position: relative; overflow: hidden; margin-top: 1.5rem; width: 100%; padding-top: 58%;">
-<iframe style="display: block; margin: 0 auto; border: 1px solid grey; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://onedrive.live.com/embed?cid=AE1EEBA29E76144B&resid=AE1EEBA29E76144B%21256&authkey=AAcZtJ3L21S8ZsU&em=2
-" allow="encrypted-media"></iframe>
+<iframe style="display: block; margin: 0 auto; border: 1px solid grey; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://onedrive.live.com/embed?resid=AE1EEBA29E76144B%21407&authkey=!AFwNWaC0i_Znbm8&em=2" allow="encrypted-media"></iframe>
 </div>
 
 
