@@ -185,7 +185,7 @@ public class Person {
 }
 ```
 
-If a constructor has already been defined for a class, no default constructor exists for that class. Therefore, if `new Person` were to be called for the class below, an error would occur as Java cannot find a constructor in the class that does not take any parameters:
+If a constructor has already been defined for a class, no default constructor exists for that class. Therefore, if `new Person()` were to be called for the class below, an error would occur as Java cannot find a constructor in the class that does not take any parameters:
 
 
 
