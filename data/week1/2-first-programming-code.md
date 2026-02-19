@@ -64,7 +64,7 @@ Note that source code is read line-by-line, from left to right, with each statem
 
 The statement used in this program is specific to Java and outputs text to the console during program execution. The text to be printed is specified within the brackets, in this case `Hello World!`. Note that it's important to surround the printed text with quotation marks (`""`), which are not printed themselves.
 
-When adding our cade to the template again, our code looks like this:
+When adding our code to the template again, our code looks like this:
 ``` Java
 public class HelloWorld {
   public static void main(String[] args) {
@@ -91,13 +91,13 @@ You can check your code by clicking on the `Check` button that is shown in the b
 </programming-exercise>
 
 ## Running the code
-You are now ready to run your code! To run this program, click on the green triangle has appeared in the margin and click on `run`. You can also use the keyboard shortcut `Ctrl + Shift + F10`. If you followed the above steps, you should now see that the text "Hello World!" is printed to the console, which you can read under the opened `Run` tab at the bottom of your screen. If you want to rerun your code, you can click on the green triangle in the top right corner, or use the keyboard shortcut `Shift + F10`.
+You are now ready to run your code! To run this program, click on the green triangle that has appeared in the margin and click on `run`. You can also use the keyboard shortcut `Ctrl + Shift + F10`. If you followed the above steps, you should now see that the text "Hello World!" is printed to the console, which you can read under the opened `Run` tab at the bottom of your screen. If you want to rerun your code, you can click on the green triangle in the top right corner, or use the keyboard shortcut `Shift + F10`.
 
 <text-box variant="hint" name="Running code">
 
 Even though running a program is straightforward, a complex process happens in the background. The Java compiler first converts the source code into Java bytecode. Then, the program is executed by a Java interpreter, executing the commands one by one.
 
-This compile process influences error detection and feedback. The compiler can check for errors before the program is executed, and the IDE (Integrated Development Envirnoment) provides immediate feedback on any issues.
+This compile process influences error detection and feedback. The compiler can check for errors before the program is executed, and the IDE (Integrated Development Environment) provides immediate feedback on any issues.
 
 The IDE makes the process easy by allowing the programmer to compile and execute the program with a single button press. It also continuously compiles the program, enabling it to report errors. For instance, changing the Hello World exercise print command to `System.out.println("Hello World!")`, by removing the semi-colon, will result in a line underlining and an error notification on the left side.
 

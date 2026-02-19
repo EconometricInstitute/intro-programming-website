@@ -250,7 +250,7 @@ System.out.println(result2); // prints 1.5
 
 In general, the advice is to be careful when executing a division operation where both the dividend and divisor are integers. Another way to avoid this, is to convert one of the variables to a floating-point number by multiplying it with 1.0 before the division.
 
-Another important to note that dividing by zero is usually undefined in programming, like in mathematics.
+Another important point to note is that dividing by zero is usually undefined in programming, like in mathematics.
 
 <programming-exercise name="Average of three numbers"  tmcname='part01-Part01_22.AverageOfThreeNumbers'>
 

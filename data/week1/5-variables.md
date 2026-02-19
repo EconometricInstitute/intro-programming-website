@@ -45,7 +45,7 @@ It is important to note that when printing variables, you do not need to use quo
 
 <programming-exercise name="Recipe">
 
-The template for this assignment already contains code to print a recipe consisting of milk and flour. In the print statements, two variables are used: an `int` variable named `gramsOfMilk` and a `double` variable `kilosOfFlour`. The first variable indicates the amount of milk, in grams, while the second indicates the amount of flour, in kilo's.
+The template for this assignment already contains code to print a recipe consisting of milk and flour. In the print statements, two variables are used: an `int` variable named `gramsOfMilk` and a `double` variable `kilosOfFlour`. The first variable indicates the amount of milk, in grams, while the second indicates the amount of flour, in kilos.
 
 Complete the assignment by declaring both variables with the correct amount, such that the following output is printed:
 
@@ -53,7 +53,7 @@ Complete the assignment by declaring both variables with the correct amount, suc
 
 This recipe requires the following ingredients
 Grams of milk: 750
-Kilo's of flour: 1.5
+Kilos of flour: 1.5
 
 </sample-output>
 

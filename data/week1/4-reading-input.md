@@ -116,7 +116,7 @@ public class Program {
 ```
 In examples of the output we indicate in bold what the user has entered in the scanner. When running the program, the following will happen:
 
-Message in the compiler: `Write something:` will be printed
+Message in the console: `Write something:` will be printed
 
 The user inputs `this` and presses enter.
 
@@ -186,7 +186,7 @@ public class Program {
 
         System.out.println("Last string you wrote was " + third + ", which ");
         System.out.println("was preceded by " + second+ ".");
-        System.out.println("The first string was" + first + ".");
+        System.out.println("The first string was " + first + ".");
 
         System.out.println("All together: " + first + second + third);
     }
