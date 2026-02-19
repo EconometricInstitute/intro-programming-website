@@ -9,13 +9,13 @@ This page contains a style guide that we want you to follow during the course. F
 
 ### What is good style and why is it important?
 
-When writing text in a ‘human’ language, you may structure your text into paragraphs and start your sentences with capital letters. Although following these rules is not strictly necessary to ensure that a text can be read, they do make it much easier for others to read. Similar formatting rules exist in programming languages. Following such rules is not neccessary in order for a computer to 'understand' your code. However, following a 'good style' makes it much easier for others (and future-you) to read your code. For this reason, style guides are often used by companies to make it easier for programmers to collaborate. Furthermore, although it may seem that following a style guide takes more time, it will often actually save you time as it makes mistakes much easier to spot.
+When writing text in a ‘human’ language, you may structure your text into paragraphs and start your sentences with capital letters. Although following these rules is not strictly necessary to ensure that a text can be read, they do make it much easier for others to read. Similar formatting rules exist in programming languages. Following such rules is not necessary in order for a computer to 'understand' your code. However, following a 'good style' makes it much easier for others (and future-you) to read your code. For this reason, style guides are often used by companies to make it easier for programmers to collaborate. Furthermore, although it may seem that following a style guide takes more time, it will often actually save you time as it makes mistakes much easier to spot.
 
 During this course we will also be using a style guide. This style guide will only contain some basic principles, as we do not want to overload you with too many things to learn at the same time. Most of them are 'common sense' rules, and IntelliJ will often already help you along by doing some things for you. Note that we may decide to stray slightly from the guide in case someone hands in something terrible that is not covered here.
 
 ## Automatic style grading
 
-For the pre-master version of the course in block 1, we experimented with using CodeGrade to automatically check the style of your code. This was quite a success! The automatic testing of the style does check everything in the style guide, as some things are hard to automatically check. So, a TA will still have a look, too. In addition, the automated grading also checks for some small things that are not covered in the style guide.
+For the pre-master version of the course in block 1, we experimented with using CodeGrade to automatically check the style of your code. This was quite a success! The automatic testing of the style does not check everything in the style guide, as some things are hard to automatically check. So, a TA will still have a look, too. In addition, the automated grading also checks for some small things that are not covered in the style guide.
 
 In the course FEB22012 Programming in the second year, you will face a [much stricter and more extensive style guide](https://erasmusuniversityautolab.github.io/FEB22012-StyleGuide).
 
@@ -40,7 +40,7 @@ int smallestprime
 String my_Name
 public class primeNumbers
 ```
- 
+
 Be sure to use meaningful and descriptive names. This will help you to prevent making mistakes and makes it easier for us to understand what you are doing. Do not hesitate to use variable names consisting of multiple words if you believe that it makes things more clear, but try to be concise. One exception for short names are in a mathematical context, where the 'actual' name is often just a letter.
 
 ```java
@@ -59,14 +59,28 @@ Although it does not always make sense, it is good practice to use *nouns* for v
 
 ```java
 // Good
-public static integer sumPrimesUntil(int n)
-public static integer getNextPrime(int n)
+public static int sumPrimesUntil(int n)
+public static int getNextPrime(int n)
 int nextPrime
 int sumOfPrimes
 
 // Bad
-public static integer prime(int n)
+public static int prime(int n)
 int sumPrimes
+```
+
+For booleans, use names that read like true/false statements:
+```java
+// Good
+boolean isPrime;
+boolean hasAccess;
+boolean gameOver;
+public static boolean isValidInput(String input)
+
+// Bad
+boolean prime;
+boolean access;
+public static boolean validInput(String input)
 ```
 
 
@@ -93,13 +107,13 @@ Place a space after control statements (`if`, `while`, `else`). Do not place a s
 
 ```java
 // Good
-if (a < b) 
-public static integer getNextPrime(int n)
+if (a < b)
+public static int getNextPrime(int n)
 getNextPrime(myPrime)
 
 // Bad
-if(a < b) 
-public static integer getNextPrime (int n)
+if(a < b)
+public static int getNextPrime (int n)
 getNextPrime( myPrime )
 ```
 
@@ -108,9 +122,9 @@ getNextPrime( myPrime )
 An opening curly brace should never go on its own line and should always be followed by a new line. A closing curly brace should always go on its own line, unless it’s followed by an else statement. Always indent code inside curly braces. The keybinding ctrl + alt + L (Windows) or cmd + alt + L (Mac OS) does this for you automatically.
 
 ```java
-if (a < d) {  
+if (a < d) {
 	a = b + e;
-} else { 
+} else {
 	a = d;
 }
 
@@ -120,14 +134,14 @@ if (importantSecurityCheck) {
 }
 
 // Bad
-if (a < d) 
+if (a < d)
 {
 a = b + e} else a = d;
 
 /* The following actually does not do what the user
  * likely intended, and shows the danger of
- * omitting curly braces 
- */ 
+ * omitting curly braces
+ */
 if (importantSecurityCheck)
 	grantAccessSecretDocuments();
 	grantAccessNuclearLaunchCodes();
@@ -137,7 +151,7 @@ if (importantSecurityCheck)
 ### Comments
 
 You should use comments in order to indicate what certain segments of your code do, and to explain more difficult parts of your code. Comments can be on their own line, or even span multiple lines, but very short comments are also allowed after code (inline comment). Do not use comments if they are not necessary.
- 
+
 Note that the following example contains an excessive amount of comments for the sake of the example. In practice, **no comments would be necessary here because the naming makes it obvious what the code does**.
 
 ```java
@@ -160,7 +174,7 @@ return x * y; // I return the result
 ```
 
 ### Blank lines
-Use blank lines between parts of your code to improve readability. A good rule of thumb is to use a blank line whenever the code is "semantically" different. For example, two assignment statement can be beneath each other. However, a subsequent method call should be seperated by a blank line.
+Use blank lines between parts of your code to improve readability. A good rule of thumb is to use a blank line whenever the code is "semantically" different. For example, two assignment statements can be beneath each other. However, a subsequent method call should be separated by a blank line.
 
 ```java
 // Good
@@ -176,19 +190,19 @@ int c = add(a, b);
 ```
 
 ### No magic numbers
-With the exception of the additive and multiplicative identities (0 and 1), there should be no numbers appearing in the middle of your code. The reason for this is that those number are almost always tied to a specific application of your code, so that if the application changes the numbers must also change. If these number appear everywhere throughout your code, then you must replace them at every location if the application changes. This is a lot of work and prone to errors. Instead, create a variable to store the number, which you can then easily change if the application changes.
+With the exception of the additive and multiplicative identities (0 and 1), there should be no numbers appearing in the middle of your code. The reason for this is that those numbers are almost always tied to a specific application of your code, so that if the application changes the numbers must also change. If these numbers appear everywhere throughout your code, then you must replace them at every location if the application changes. This is a lot of work and prone to errors. Instead, create a variable to store the number, which you can then easily change if the application changes.
 
 ```java
 // Good
 int maxValue = 8;
 
-for (int i; i < maxValue; i++) {
+for (int i = 0; i < maxValue; i++) {
 	System.out.println(i + maxValue);
 }
 
 // Bad
 
-for (int i; i < 8; i++) {
+for (int i = 0; i < 8; i++) {
 	System.out.println(i + 8);
 }
 ```
