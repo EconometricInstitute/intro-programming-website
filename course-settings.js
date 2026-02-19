@@ -14,10 +14,6 @@ const courseSettings = {
       path: "/",
     },
     {
-      title: "Sessions and Support",
-      path: "/sessions-and-support",
-    },
-    {
       title: "Grading and exams",
       path: "/grading-and-exams",
     },
@@ -26,13 +22,13 @@ const courseSettings = {
       path: "/style-guide",
     },
     {
-      title: "Plagiarism guide",
-      path: "/plagiarism-guide",
+      title: "AI guide",
+      path: "/ai-guide",
     },
     { separator: true, title: "Java Programming I" },
   ],
   sidebarFuturePages: [
-  ], 
+  ],
   splitCourses: false,
   useNewPointsVisualization: false
 }

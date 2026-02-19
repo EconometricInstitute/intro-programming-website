@@ -1,5 +1,5 @@
 ---
-path: '/week-2/1-io-for-different types'
+path: '/week-2/1-io-for-different-types'
 title: 'Reading and Printing Variables of Different Type'
 hidden: false
 ---
@@ -24,7 +24,7 @@ In addition to `String` and `int`, the `Scanner` class provides handy methods fo
   scanner.nextDouble();
 ```
 
-As an example, we can thus use the `Scanner` class to read all variables types that we have learned so far in the following way:
+As an example, we can thus use the `Scanner` class to read all variable types that we have learned so far in the following way:
 ``` java
 import java.util.Scanner;
 
@@ -123,7 +123,7 @@ The first argument should be a `String` that represents what we want to print. I
 For example, the flag `%.2f` indicates that we want to print a double value with two decimal places. The `f` indicates that it's a floating point number, while the `.2` specifies the number of decimal places. To print the value of `pi` in this format, we place the flag `%.2f` in the `String` where we want to print `pi`.
 The second argument we provide is the value that should replace the flag. In our example, we provide the value of `pi` as the second argument.
 
-We can alo use different flags to represent different variable types. Here are some examples:
+We can also use different flags to represent different variable types. Here are some examples:
 
 - `%.xs` represents a `String`, where the number `x` specifies the maximum number of characters we want to print.
 - `%.xf` represents a `double` value with a specified number of decimal places.

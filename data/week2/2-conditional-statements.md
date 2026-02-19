@@ -218,8 +218,10 @@ Greater number is: 8
 
 <sample-output>
 
-Give the first number; **5**
-Give the second number: **5**
+Give the first number:
+**5**
+Give the second number:
+**5**
 The numbers are equal!
 
 </sample-output>
@@ -410,7 +412,7 @@ int number = 7;
 if (number >= 5 && number <= 10) {
     System.out.println("It is! :)");
 } else {
-    System.out.println("It is not :(")
+    System.out.println("It is not :(");
 }
 ```
 

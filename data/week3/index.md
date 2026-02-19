@@ -9,7 +9,7 @@ In the third week of the course we look at splitting up programs into smaller pa
 
 <pages-in-this-section></pages-in-this-section>
 
-The table of contents above lists the topics of the third week of the course. By the end of this week, you should:
+By the end of this week, you should:
 - understand the different types of errors that you can encounter.
 - be comfortable debugging code using a debugger and print statements.
 - be able to write a method, and add it to your programming toolbox

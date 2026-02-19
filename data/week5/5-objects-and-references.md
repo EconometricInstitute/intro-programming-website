@@ -1211,7 +1211,7 @@ Songs are equal
 
 Every class we create (and every ready-made Java class) inherits the class Object, even though it is not specially visible in the program code. This is why an instance of any class can be passed as a parameter to a method that receives an Object type variable as its parameter. Inheriting the Object can be seen elsewhere, too: for instance, the `toString` method exists even if you have not implemented it yourself, just as the `equals` method does.
 
-To illustrate, the following source code compiles successfully: `equals` method can be found in the Object class inherited by all classes.
+To illustrate, the following source code compiles successfully. The `equals` method can be found in the `Object` class inherited by all classes.
 
 ```java
 public class Bird {

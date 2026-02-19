@@ -143,7 +143,7 @@ while (!s.isEmpty()) {
 
 </sample-output>
 
-Tip: When a value is added to an `ArrayList`, it is appended to the end of the list. Therefore, the most recently added value will be in the last index of the list. To find the last index, you can use the `length` method provided by the list. Additionally, you can remove an element from a specific index using the `remove` method provided by the list.
+Tip: When a value is added to an `ArrayList`, it is appended to the end of the list. Therefore, the most recently added value will be in the last index of the list. To find the last index, you can use the `size` method provided by the list. Additionally, you can remove an element from a specific index using the `remove` method provided by the list.
 
 </programming-exercise>
 
@@ -494,10 +494,10 @@ phoenix
 
 ### Clearing an Object's List
 
-We'll next add a `removeEveryoneOnRide` method to the amusement park ride, which removes each and every person currently on the ride.The list method `clear` is very handy here.
+We'll next add a `removeEveryoneOnRide` method to the amusement park ride, which removes each and every person currently on the ride. The list method `clear` is very handy here.
 
 ```java
-public class AmusementParkRIde {
+public class AmusementParkRide {
     // ..
 
     public void removeEveryoneOnRide() {

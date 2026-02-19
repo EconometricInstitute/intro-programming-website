@@ -94,7 +94,7 @@ A program that runs infinitely does not end on its own. In IntelliJ, it can be s
 
 You can break out of a loop by using the 'break' command. When a computer executes the command 'break', the program execution moves onto the next command following the loop block.
 
-The example below is a program that prints numbers the from one to five. Note how the variable that's used within the loop is defined before the loop. This way the variable can be incremented inside the loop and the change sticks between multiple iterations of the loop.
+The example below is a program that prints numbers from one to five. Note how the variable that's used within the loop is defined before the loop. This way the variable can be incremented inside the loop and the change sticks between multiple iterations of the loop.
 
 ```java
 int number = 1;
@@ -426,11 +426,11 @@ while (true) {
 }
 ```
 
-We notice that it's difficult to define a single, clear task for `if-else if-else`-block. During the design and implementation of a program, it's desirable to aim for a situation in which every part of the program has a a single, clear task. This theme repeats throughout the course.
+We notice that it's difficult to define a single, clear task for an `if-else if-else` block. During the design and implementation of a program, it's desirable to aim for a situation in which every part of the program has a single, clear task. This theme repeats throughout the course.
 
 ## Calculation with Loops
 
-Loops are used in computing many different things. For example, programs that process indefinite numbers of user-inputted values make use of loops. These kinds of programs typically print out some sort of statistics about the numbers that were read or other inputs after the end loop.
+Loops are used in computing many different things. For example, programs that process indefinite numbers of user-inputted values make use of loops. These kinds of programs typically print out some sort of statistics about the numbers that were read or other inputs after the loop ends.
 
 For the program to print out information from the loop execution after the loop, the information must be saved and modified during the loop.
 
@@ -503,7 +503,7 @@ while (true) {
 }
 ```
 
-The example above works, but not in a way we hoped it would. Below the example output of the program
+The example above works, but not in a way we hoped it would. Below is an example output of the program.
 
 <sample-output>
 
@@ -526,7 +526,7 @@ Insert a number (0 exits)
 
 If you wish to use a variable after a loop, it needs to be introduced before the loop.
 
-In the example below, the program computes the total of number ones inputted. The inputs are read until the user inputs a zero after which the program prints the total count of number ones entered. The program uses variable `ones` to keep track of the number ones.
+In the example below, the program computes the total number of ones inputted. The inputs are read until the user inputs a zero, after which the program prints the total count of ones entered. The program uses variable `ones` to keep track of the number of ones.
 
 ```java
 Scanner scanner = new Scanner(System.in);
@@ -557,7 +557,6 @@ while (true) {
 System.out.println("The total of ones: " + ones);
 ```
 
-<!-- Alla on esimerkki ohjelman toiminnasta. -->
 Below is an example output of the program.
 
 <sample-output>

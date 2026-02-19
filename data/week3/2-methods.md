@@ -19,9 +19,9 @@ Technically speaking, **a method** is a named set of statements. It's a piece of
 So far all the methods we have used have been ready-made Java methods. Next we will learn to create our own methods.
 
 ## Custom Methods
-**A method** refers to a named set consisting of statements that can be called from elsewhere in the program code by its name. Programming languages offer pre-made methods, but programmers can also write their own ones. It would, in fact, be quite exceptional if a program used no methods written by the programmer, because methods help in structuring the program. From this point onward nearly every program in the course will therefore contain custom-created methods.
+**A method** refers to a named set consisting of statements that can be called from elsewhere in the program code by its name. Programming languages offer pre-made methods, but programmers can also write their own methods. It would, in fact, be quite exceptional if a program used no methods written by the programmer, because methods help in structuring the program. From this point onward nearly every program in the course will therefore contain custom-created methods.
 
-In the code boilerplate, methods are written outside of the curly braces of the `main`, yet inside out the "outermost" curly braces. They can be located above or below the main.
+In the code boilerplate, methods are written outside of the curly braces of `main`, yet inside the "outermost" curly braces. They can be located above or below `main`.
 
 ```java
 import java.util.Scanner;
@@ -56,7 +56,7 @@ public class Example {
 
 The definition of the method consists of two parts. The first line of the definition includes the name of the method, in this case `greet`. On the left side of the name are the keywords `public static void`. Beneath the line containing the name of the method is a code block surrounded by curly brackets, inside of which is the code of the method -- the commands that are executed when the method is called. The only thing our method `greet` does is write a line of text on the screen.
 
-Calling a custom method is simple: write the name of the methods followed by a set of parentheses and the semicolon. In the following snippet the main program (main) calls the greet method four times in total.
+Calling a custom method is simple: write the name of the method followed by a set of parentheses and a semicolon. In the following snippet the main program (`main`) calls the `greet` method four times in total.
 
 ```java
 import java.util.Scanner;

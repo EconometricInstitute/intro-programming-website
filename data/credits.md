@@ -55,10 +55,3 @@ The course was translated by these individuals (in alphabetical order):
 * Kalle Belmo
 * Reetta Puska
 * Tero Tapio
-
-
-### Technology used in this course
-
-The course page has been made by [Henrik Nygren](https://github.com/nygrenh) and [Antti Leinonen](https://github.com/redande).
-
-The automatic programming assignment assessment tool "Test My Code" (or TMC) has been created by the [Agile Education Research group](https://www.helsinki.fi/en/researchgroups/data-driven-education) at University of Helsinki.
