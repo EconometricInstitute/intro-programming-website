@@ -22,8 +22,8 @@ const courseSettings = {
       path: "/style-guide",
     },
     {
-      title: "Plagiarism guide",
-      path: "/plagiarism-guide",
+      title: "AI guide",
+      path: "/ai-guide",
     },
     { separator: true, title: "Java Programming I" },
   ],
