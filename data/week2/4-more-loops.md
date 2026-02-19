@@ -7,7 +7,7 @@ hidden: false
 
 <text-box variant='learningObjectives' name='Learning Objectives'>
 
- - You're familiar with the condition of the `while` loop condition.
+ - You're familiar with the condition of the `while` loop.
  - You know how to use the `for` loop.
  - You recognize situations where a `while` loop should be used and those where a `for` loop is more appropriate.
 
@@ -391,7 +391,7 @@ int validNumbers = 0;
 int invalidNumbers = 0;
 
 while (true) {
-    int input = scanner.nextInt();
+    int input = reader.nextInt();
 
     if (input == 0) {
         System.out.println("Sum of valid numbers: " + sum);
