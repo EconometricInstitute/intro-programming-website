@@ -71,7 +71,7 @@ As you may have noticed already, the source code contains some syntax errors. It
 </programming-exercise>
 
 ## Run-Time Errors
-A second type of error, referred to as a run-time error, can occur when the program is actually run. These type of errors occur when a program encounters some unexpected condition while running, leading to the program throwing an *exception*. An exception is, for example, thrown when the user inputs a value of the incorrect type when using the `scanner.nextDouble()` statement, or when you use an argument that does not fit the used flag in the `System.printf()` statement.
+A second type of error, referred to as a run-time error, can occur when the program is actually run. These types of errors occur when a program encounters some unexpected condition while running, leading to the program throwing an *exception*. An exception is, for example, thrown when the user inputs a value of the incorrect type when using the `scanner.nextDouble()` statement, or when you use an argument that does not fit the used flag in the `System.out.printf()` statement.
 
 Let us consider the case of receiving input of the incorrect type in more detail. We consider the following program, for which an example of the exception that can be thrown is shown below:
 
@@ -98,7 +98,7 @@ Exception in thread "main" java.util.InputMismatchException
 
 </sample-output>
 
-Note that the exception message shows again useful information which helps us in finding what happened. In particular, we see that an `InputMismatchException` occurred and that the `Scanner`tool was involved in this exception. Moreover, the message also occurs where the error in our code occurred, in this case on line 8 of the `RunTimeExample` program. Combining this information, we are often able to figure out what triggered the exception to be thrown.
+Note that the exception message again shows useful information that helps us find what happened. In particular, we see that an `InputMismatchException` occurred and that the `Scanner` tool was involved in this exception. Moreover, the message also indicates where the error in our code occurred, in this case on line 8 of the `RunTimeExample` program. Combining this information, we are often able to figure out what triggered the exception to be thrown.
 
 As long as you are the person using the code, you can often fix the error, for example by making sure to give input of the correct type. However, if some other user uses your program, you don't have the same level of control. We will explore methods to deal with run-time errors in these cases later in the course.
 
@@ -155,7 +155,7 @@ Each number is printed on its own line.
 int value = 10;
 
 // The loop execution continues until the value of the variable named value is less than or equal to zero.
-// The excution doesn't stop _immediately_ when the value zero is assigned to the variable, but only when the condition of the loop is evaluated the following time.
+// The execution doesn't stop _immediately_ when the value zero is assigned to the variable, but only when the condition of the loop is evaluated the following time.
 // This always happens after the loop has executed
 while (value > 0) {
     // we print out the value in the variable and a new line
@@ -166,7 +166,7 @@ while (value > 0) {
 ```
 Comments have no impact on the execution of the program, i.e., the program works in the same way with the comments as it does without them.
 
-The comment style displayed above that is intended for learning purposes is, however, too elaborate for real development, where the goal is for the source code to be **self documenting**. This means that the functionality of the program should be evident from the way classes, methods, and variables are named.
+The comment style displayed above that is intended for learning purposes is, however, too elaborate for real development, where the goal is for the source code to be **self-documenting**. This means that the functionality of the program should be evident from the way classes, methods, and variables are named.
 
 ## Searching for Errors with Print Debugging
 One required skill in programming is the ability to test and debug when searching for errors. The simplest way to search for errors is to use so-called print debugging, which in practice involves adding messages to certain lines of code. These messages are used to follow the flow of the program's execution, and can also contain values of variables that live in the program.
