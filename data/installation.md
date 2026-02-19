@@ -1,11 +1,11 @@
 ---
 path: "/installation"
-title: "Installing IntelliJ"
+title: "Installing IntelliJ and JDK"
 hidden: false
 information_page: true
 ---
 
-In this page, we will guide you through the installation of both **IntelliJ** and **Java** on your personal computer.
+In this page, we will guide you through the installation of both **IntelliJ** and a **Java Development Kit** on your personal computer.
 IntelliJ will be the default programming environment, the program in which you will write the code, that we use for this course.
 It comes pre-installed on university computers, so if you plan to only work from those you can skip the remainder of this page.
 If you run into issues installing the software, you can ask for help during the first week tutorial.
@@ -18,7 +18,7 @@ Follow the steps below to install IntelliJ IDEA on your computer.
 3. Open the downloaded installer file and follow the installation instructions.
 4. Launch IntelliJ IDEA after installation.
 
-You can find more detailed instructions here: [https://www.jetbrains.com/help/idea/installation-guide.html#standalone_windows][https://www.jetbrains.com/help/idea/installation-guide.html#standalone_windows].
+You can find more detailed instructions [here](https://www.jetbrains.com/help/idea/installation-guide.html#standalone_windows).
 
 
 ## Installing java
