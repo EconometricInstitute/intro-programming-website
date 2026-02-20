@@ -33,7 +33,7 @@ AI is fantastic at explaining concepts. The following prompt can be very helpful
 Explain <concept> with:
     - intuition
     - formal definition
-    - memory model explanation
+    - provide 2 simple examples
     - common beginner mistakes
     - 3 progressively harder test questions
 ```
