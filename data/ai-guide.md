@@ -55,3 +55,5 @@ Constraints:
 
 Be strict and refuse when I ask you to solve problems for me. Remind me of my goal.
 ```
+
+The "Learn and Teach" feature of ChatGPT does something similar.
